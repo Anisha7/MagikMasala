@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "clean": "rm -rf .next out && gh-pages-clean",
-    "deploy": "npm run clean && next build && gh-pages -d out"
+    "clean": "rm -rf .next out _next && gh-pages-clean",
+    "move-out": "mv out _next",
+    "deploy": "npm run clean && next build && npm run move-out && gh-pages -d _next"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.7.2",
