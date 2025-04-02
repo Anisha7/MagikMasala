@@ -10,6 +10,7 @@ import GameFeature from "@/components/GameFeature"
 import TeamMember from "@/components/TeamMember"
 import WaitlistForm from "@/components/WaitlistForm"
 import Image from "next/image"
+import "./globals.css"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)

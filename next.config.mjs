@@ -10,10 +10,10 @@ const repo = "MagikMasala"
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
