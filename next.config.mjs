@@ -9,6 +9,30 @@ const repo = "MagikMasala"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // output: 'export',
+  // trailingSlash: true,
+  // images: {
+  //   unoptimized: true,
+  // },
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
+  // typescript: {
+  //   ignoreBuildErrors: true,
+  // },
+  // experimental: {
+  //   webpackBuildWorker: true,
+  //   parallelServerBuildTraces: true,
+  //   parallelServerCompiles: true,
+  // },
+  // distDir: "_next",
+  // generateBuildId: async () => {
+  //   if (process.env.BUILD_ID) {
+  //     return process.env.BUILD_ID;
+  //   } else {
+  //     return `${new Date().getTime()}`;
+  //   }
+  // },
   output: 'export',
   trailingSlash: true,
   images: {
@@ -20,18 +44,14 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // distDir: "_next", // fine to keep, doesn't affect static export
+  generateBuildId: async () => {
+    return process.env.BUILD_ID || `${Date.now()}`
+  },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
-  },
-  distDir: "_next",
-  generateBuildId: async () => {
-    if (process.env.BUILD_ID) {
-      return process.env.BUILD_ID;
-    } else {
-      return `${new Date().getTime()}`;
-    }
   },
 }
 
